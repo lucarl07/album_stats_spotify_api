@@ -1,0 +1,8 @@
+# Ignorar diretório com textos descritivos:
+text/
+
+# Ignorar arquivos .JSON:
+.json 
+
+# Exceto settings.json:
+!settings.json
