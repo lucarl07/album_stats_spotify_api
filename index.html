@@ -4,10 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial - AlbumStats</title>
+    <title>Página Inicial | AlbumStats</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/spotify-64.ico" type="image/x-icon">
 </head>
 <body>
-    <h1>Olá mundo!</h1>
+    <header>
+        <nav class="navbar">
+            <img src="./images/spotify-256.ico" alt="Ícone azul do Spotify">
+
+            <ul class="navigation">
+                <li class="nav-item">
+                    <a href="" class="nav-link">Pesquisar</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="" class="nav-link">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="" class="nav-link">Registrar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 class="title">Você é o que você escuta.</h1>
+            <h2 class="subtitle">Por isso, queremos que conheça seu gosto musical.</h2>
+
+            <p class="paragraph">
+                Pesquise seus álbuns favoritos e tenha acesso a uma fonte ilimitada de informações sobre eles, tudo possibilitado pela Spotify Web API.
+            </p>
+            
+            <div class="hero-button-area">
+                <div class="login-area">
+                    <label for="btnLogin">Se você já é da casa, clique abaixo para entrar:</label>
+                    <button class="button-login" id="btnLogin">Entrar</button>
+                </div>
+
+                <hr id="buttonAreaLine">
+
+                <div class="register-area">
+                    <label for="btnRegister">Se é novo por aqui, crie uma conta clicando abaixo:</label>
+                    <button class="button-register" id="btnRegister">Crie uma conta</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="copyright-p">
+            <span>&copy; 2023 Luiz Carlos Jr.</span>
+            <span>Todos os direitos reservados.</span>
+        </p>
+    </footer>
 </body>
 </html>
