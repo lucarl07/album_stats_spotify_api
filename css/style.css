@@ -1,0 +1,16 @@
+/* Color palette: */
+:root {
+    /* BASIC: */
+    --white: #eae8e3;
+    --grey: #b1a99f;
+    --rose-red: #ef5552;
+    --yellow: #cda160;
+    --black: #302b2c;
+
+    /* OPTIONAL: */
+    --scarlet: #eb2724;
+    --green: #74816f;
+    --blue: #5963a4;
+    --gold: #be8a3c;
+}
+
