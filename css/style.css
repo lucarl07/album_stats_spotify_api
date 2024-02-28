@@ -1,0 +1,15 @@
+/* Color palette: */
+:root {
+    /* PRIMARY (temp): */
+    --white: #eeeeee;
+    --gray: #9b9696;
+    --rose-red: #a84444;
+    --yellow: #ddbe7a;
+    --black: #1a1a1a;
+
+    /* SECONDARY (temp): */
+    --scarlet: #be2121;
+    --blue: #4053bd;
+    --green: #4fa161;
+    --golden: #c29f54;
+}
