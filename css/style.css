@@ -81,3 +81,66 @@ header {
 .nav-item:active a {
     color: var(--gray);
 }
+
+/* Main->HERO properties: */
+main {
+    margin-bottom: 5rem;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.title-area {
+    color: var(--black);
+    text-align: left;
+}
+.title-area h1 {
+    font-size: 4rem;
+    width: fit-content;
+}
+.title-area h2 {
+    margin-top: 0.5rem;
+    width: fit-content;
+}
+
+.paragraph {
+    width: 705px;
+    line-height: 0.85cm;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.account-entry-area {
+    display: flex;
+    gap: 2rem;
+}
+.account-entry-area label {
+    display: inline-block;
+}
+
+.login-container, .register-container {
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    gap: 0.8rem;
+    line-height: 0.65cm;
+}
+.login-container {
+    text-align: end;
+}
+
+.button-login, .button-register {
+    width: 175px;
+    height: 50px;
+    border: 2px solid var(--rose-red);
+    border-radius: 8px;
+    color: var(--rose-red);
+    font-weight: 700;
+    font-size: 16px;
+}
+.button-login {
+    align-self: flex-end;
+}
