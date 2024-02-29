@@ -32,8 +32,9 @@ body {
 
 /* Header properties: */
 header {
+    position: absolute;
     width: 100%;
-    margin-bottom: 5rem;
+    border-top: 1px solid var(--rose-red);
     border-bottom: 1px solid var(--rose-red);
 }
 
@@ -42,9 +43,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
+    background-color: var(--rose-red);
 }
 .navbar img {
     width: 56px;
+    filter: brightness(10);
 }
 
 .navigation {
@@ -60,7 +63,7 @@ header {
     display: flex;
     align-items: center;
     height: 100%;
-    color: var(--rose-red);
+    color: var(--white);
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
@@ -69,28 +72,31 @@ header {
 }
 
 .nav-item:hover { /* ANIMATION 01: */
-    background-color: var(--rose-red);
+    background-color: var(--white);
+    transition: all 0.2s ease-out;
 }
 .nav-item:hover a {
-    color: var(--white);
+    color: var(--rose-red);
+    transition: all 0.2s ease-out;
 }
 
 .nav-item:active { /* ANIMATION 02: */
-    background-color: var(--white);
+    background-color: var(--rose-red);
 }
 .nav-item:active a {
-    color: var(--gray);
+    color: var(--yellow);
 }
 
 /* Main->HERO properties: */
 main {
-    margin-bottom: 5rem;
+    margin: 5rem 0;
 }
 
 .hero {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    margin: 5rem 0;
 }
 
 .title-area {
