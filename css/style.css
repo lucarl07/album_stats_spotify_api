@@ -59,6 +59,7 @@ header {
 .nav-item {
     padding: 0 2rem;
     height: 5rem;
+    transition: all 0.3s ease-out;
 }
 .nav-item a {
     display: flex;
@@ -69,16 +70,13 @@ header {
     text-decoration: none;
     font-weight: 700;
     font-size: 20px;
-    transition: all 0.2s ease-out;
 }
 
 .nav-item:hover { /* ANIMATION 01: */
     background-color: var(--white);
-    transition: all 0.2s ease-out;
 }
 .nav-item:hover a {
     color: var(--rose-red);
-    transition: all 0.2s ease-out;
 }
 
 .nav-item:active { /* ANIMATION 02: */
