@@ -1,4 +1,4 @@
-import {getToken} from './common.js';
+import {getToken} from '../js/common.js';
 
 const trackId = "4VPR3GtqJrTRpZOCYpG6v6"
 
