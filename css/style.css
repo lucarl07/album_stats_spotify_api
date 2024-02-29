@@ -47,7 +47,7 @@ header {
     background-color: var(--rose-red);
 }
 .navbar img {
-    width: 56px;
+    width: 48px;
     filter: brightness(10);
 }
 
