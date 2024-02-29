@@ -182,7 +182,7 @@ header {
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.2s ease-out;
+    transition: all 0.1s ease-out;
 }
 .button-login {
     color: var(--blue);
@@ -196,13 +196,16 @@ header {
 .button-login:hover {
     background-color: var(--blue);
     color: var(--white);
+    transition: all 0.25s ease-out;
 }
 .button-register:hover {
     background-color: var(--green);
     color: var(--white);
+    transition: all 0.25s ease-out;
 }
 
 .button-login:active, .button-register:active {
     color: var(--light-gray);
     font-size: 14px;
+    transition: all 0.1s ease-out;
 }
