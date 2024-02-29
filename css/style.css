@@ -121,7 +121,7 @@ main {
 
 .account-entry-area {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 .account-entry-area label {
     display: inline-block;
@@ -132,21 +132,35 @@ main {
     flex-direction: column;
     width: 225px;
     gap: 0.8rem;
+    text-align: center;
     line-height: 0.65cm;
-}
-.login-container {
-    text-align: end;
 }
 
 .button-login, .button-register {
+    align-self: center;
     width: 175px;
     height: 50px;
-    border: 2px solid var(--rose-red);
     border-radius: 8px;
-    color: var(--rose-red);
     font-weight: 700;
     font-size: 16px;
+    transition: all 0.2s ease-out;
 }
 .button-login {
-    align-self: flex-end;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
+.button-register {
+    color: var(--green);
+    border: 2px solid var(--green);
+}
+
+.button-login:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+}
+.button-register:hover {
+    background-color: var(--green);
+    color: var(--white);
+    cursor: pointer;
 }
