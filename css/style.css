@@ -12,6 +12,7 @@
     --blue: #4053bd;
     --green: #4fa161;
     --golden: #c29f54;
+    --light-gray: #dfdfdf;
 }
 
 /* Global properties: */
@@ -121,7 +122,12 @@ main {
 
 .account-entry-area {
     display: flex;
+    padding: 1.5rem 1rem;
+    width: fit-content;
     gap: 1rem;
+    background-color: var(--light-gray);
+    border: 1px solid var(--gray);
+    border-radius: 1rem;
 }
 .account-entry-area label {
     display: inline-block;
@@ -135,14 +141,19 @@ main {
     text-align: center;
     line-height: 0.65cm;
 }
+.register-container {
+    margin-right: 0.25rem;
+}
 
 .button-login, .button-register {
     align-self: center;
     width: 175px;
     height: 50px;
+    background-color: var(--light-gray);
     border-radius: 8px;
     font-weight: 700;
     font-size: 16px;
+    cursor: pointer;
     transition: all 0.2s ease-out;
 }
 .button-login {
@@ -157,10 +168,13 @@ main {
 .button-login:hover {
     background-color: var(--blue);
     color: var(--white);
-    cursor: pointer;
 }
 .button-register:hover {
     background-color: var(--green);
     color: var(--white);
-    cursor: pointer;
+}
+
+.button-login:active, .button-register:active {
+    color: var(--light-gray);
+    font-size: 14px;
 }
