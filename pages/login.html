@@ -10,10 +10,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Stylization -->
-    <link rel="shortcut icon" href="./images/spotify-64.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/spotify-64.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/login-and-register.css">
 </head>
 <body>
+    <section class="login-form">
+        <h1 class="title">Entre na sua conta</h1>
+        
+        <div class="input-area">
+            <div class="container">
+                <label for="inEmail">E-mail:</label>
+                <input type="text" name="inEmail" id="inEmail">
+            </div>
+    
+            <div class="container">
+                <label for="inPassword">Senha:</label>
+                <input type="password" name="inPassword" id="inPassword">
+            </div>
+        </div>
+
+        <button class="button" id="btnLogin">Entrar</button>
+
+        <span class="copyright">&copy; 2024 Luiz Carlos Jr.</span>
+    </section>
+
     <script type="module" src="../js/login.js"></script>
 </body>
 </html>

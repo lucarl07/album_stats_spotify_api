@@ -27,6 +27,75 @@
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: var(--white);
+    height: 100vh;
+    background-image: url(../images/website/background-disc-shelf.jpg);
+    background-size: cover;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 4rem 1.5rem;
+    width: 550px;
+    
+    gap: 3rem;
+    background-color: var(--light-gray);
+    border: 1px solid var(--gray);
+    border-radius: 2rem;
+    color: var(--black);
+}
+.login-form .title {
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.container label {
+    display: block;
+    font-size: 18px;
+}
+.container input {
+    padding: 0 0.7rem;
+    height: 40px;
+    font-size: 18px;
+    border: 1px solid var(--black);
+    border-radius: 0.5rem;
+}
+
+.button {
+    align-self: center;
+    width: 200px;
+    height: 50px;
+    background: none;
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 20px;
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+    transition: 0.1s linear;
+}
+.button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.button:active {
+    transition: 0.05s ease-out;
+    font-size: 18px;
+}
+
+.copyright {
+    align-self: center;
 }
