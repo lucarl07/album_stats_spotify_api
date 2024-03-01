@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial | AlbumStats</title>
-    <!-- Fonte: Monsterrat -->
+    <!-- FONT: Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- Estilização -->
+    <!-- Stylization -->
+    <link rel="shortcut icon" href="./images/spotify-64.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./images/spotify-64.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <img src="./images/spotify-256.ico" alt="Ícone azul do Spotify">
+            <img src="./images/spotify-256.png" alt="Ícone azul do Spotify">
 
             <ul class="navigation">
                 <li class="nav-item">
-                    <a href="" class="nav-link">Pesquisar</a>
+                    <a href="./pages/search-album.html" class="nav-link">Pesquisar</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">Login</a>
+                    <a href="./pages/login.html" class="nav-link">Login</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">Registrar</a>
+                    <a href="./pages/register.html" class="nav-link">Registrar</a>
                 </li>
             </ul>
         </nav>
@@ -36,26 +36,43 @@
 
     <main>
         <section class="hero">
-            <h1 class="title">Você é o que você escuta.</h1>
-            <h2 class="subtitle">Por isso, queremos que conheça seu gosto musical.</h2>
+            <section class="hero-image">
+                <div class="mask-gradient"></div>
+                <img src="./images/website/clay-banks-fEVaiLwWvlU-unsplash.jpg" alt="Foto de uma prateleira de loja de discos de vinil">
+            </section>
 
-            <p class="paragraph">
-                Pesquise seus álbuns favoritos e tenha acesso a uma fonte ilimitada de informações sobre eles, tudo possibilitado pela Spotify Web API.
-            </p>
-            
-            <div class="hero-button-area">
-                <div class="login-area">
-                    <label for="btnLogin">Se você já é da casa, clique abaixo para entrar:</label>
-                    <button class="button-login" id="btnLogin">Entrar</button>
+            <section class="hero-text">
+                <div class="title-area">
+                    <h1 class="title">Lorem ipsum dolor sit amet.</h1>
+                    <h2 class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
                 </div>
-
-                <hr id="buttonAreaLine">
-
-                <div class="register-area">
-                    <label for="btnRegister">Se é novo por aqui, crie uma conta clicando abaixo:</label>
-                    <button class="button-register" id="btnRegister">Crie uma conta</button>
+    
+                <div class="paragraph-container">
+                    <p class="paragraph" id="p-hero01">
+                        Pesquise seus álbuns favoritos e tenha acesso a uma fonte ilimitada de informações sobre eles, tudo possibilitado pela Spotify Web API.
+                    </p>
+                    <p class="paragraph" id="p-hero02">
+                        Pesquise seus álbuns favoritos e tenha acesso a uma fonte ilimitada de informações sobre eles, tudo possibilitado pela Spotify Web API.
+                    </p>
+                    <p class="paragraph" id="p-hero03">
+                        Pesquise seus álbuns favoritos e tenha acesso a uma fonte ilimitada de informações sobre eles, tudo possibilitado pela Spotify Web API.
+                    </p>
                 </div>
-            </div>
+                
+                <div class="account-entry-area">
+                    <div class="login-container">
+                        <span>Se já é da casa, clique no botão abaixo para entrar:</span>
+                        <button class="button-login" id="btnLogin">Entrar</button>
+                    </div>
+    
+                    <hr id="buttonAreaLine">
+    
+                    <div class="register-container">
+                        <span>Se é novo por aqui, crie uma conta clicando abaixo:</span>
+                        <button class="button-register" id="btnRegister">Crie uma conta</button>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
 
@@ -65,5 +82,7 @@
             <span>Todos os direitos reservados.</span>
         </p>
     </footer>
+
+    <script src="./js/index.js"></script>
 </body>
 </html>

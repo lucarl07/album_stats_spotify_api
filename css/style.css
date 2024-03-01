@@ -1,17 +1,18 @@
 /* Color palette: */
 :root {
-    /* BASIC: */
-    --white: #eae8e3;
-    --grey: #b1a99f;
-    --rose-red: #ef5552;
-    --yellow: #cda160;
-    --black: #302b2c;
+    /* PRIMARY (temp): */
+    --white: #eeeeee;
+    --gray: #9b9696;
+    --rose-red: #a84444;
+    --yellow: #ddbe7a;
+    --black: #1a1a1a;
 
-    /* OPTIONAL: */
-    --scarlet: #eb2724;
-    --green: #74816f;
-    --blue: #5963a4;
-    --gold: #be8a3c;
+    /* SECONDARY (temp): */
+    --scarlet: #be2121;
+    --blue: #4053bd;
+    --green: #4fa161;
+    --golden: #c29f54;
+    --light-gray: #dfdfdf;
 }
 
 /* Global properties: */
@@ -26,15 +27,16 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     background-color: var(--white);
 }
 
 /* Header properties: */
 header {
+    z-index: 5;
+    position: fixed;
     width: 100%;
-    margin-bottom: 5rem;
-    border-bottom: 1px solid var(--blue);
+    box-shadow: 0px 0px 15px var(--gray);
 }
 
 .navbar {
@@ -42,34 +44,168 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
+    background-color: var(--rose-red);
 }
 .navbar img {
     width: 48px;
-    height: 48px;
+    filter: brightness(10);
 }
 
 .navigation {
     display: flex;
     list-style-type: none;
-    /* gap: 4rem; */
 }
-.navigation li {
+
+.nav-item {
+    padding: 0 2rem;
+    height: 5rem;
+    transition: all 0.3s ease-out;
+}
+.nav-item a {
     display: flex;
     align-items: center;
-    padding: 0 2rem;
-    height: 4.5rem;
-}
-.navigation a {
-    color: var(--blue);
-    text-decoration: none;
+    height: 100%;
+    color: var(--white);
     text-transform: uppercase;
+    text-decoration: none;
     font-weight: 700;
     font-size: 20px;
-    transition: 0.15s ease-out;
 }
-.navigation li:hover {
+
+.nav-item:hover { /* ANIMATION 01: */
+    background-color: var(--white);
+}
+.nav-item:hover a {
+    color: var(--rose-red);
+}
+
+.nav-item:active { /* ANIMATION 02: */
+    background-color: var(--rose-red);
+}
+.nav-item:active a {
+    color: var(--yellow);
+}
+
+/* Main->HERO properties: */
+.hero {
+    display: flex;
+    flex-direction: row;
+    margin: 5rem 0;
+}
+
+/* Main->Hero->Image properties: */
+.hero-image {
+    display: flex;
+    position: relative;
+    height: 80vh;
+}
+.hero-image img {
+    width: 55vw;
+    object-fit: cover;
+}
+.hero-image .mask-gradient {
+    display: flex;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 80vh;
+    background-image: linear-gradient(90deg, #ffffff00, var(--white));
+}
+
+/* Main->Hero->Text properties: */
+.hero-text {    
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin: 4rem 0 4rem 45vw;
+    gap: 4rem;
+}
+
+.title-area {
+    color: var(--black);
+    text-align: left;
+}
+.title-area h1 {
+    font-size: 4rem;
+    width: fit-content;
+}
+.title-area h2 {
+    margin-top: 0.5rem;
+    width: fit-content;
+}
+
+.paragraph-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.paragraph {
+    width: 705px;
+    line-height: 0.85cm;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* Main->...->ACCOUNT-ENTRY-AREA properties: */
+.account-entry-area {
+    display: flex;
+    padding: 1.5rem 1rem;
+    width: fit-content;
+    gap: 1rem;
+    background-color: var(--light-gray);
+    border: 1px solid var(--gray);
+    border-radius: 1rem;
+}
+.account-entry-area label {
+    display: inline-block;
+}
+
+.login-container, .register-container {
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    gap: 0.8rem;
+    text-align: center;
+    line-height: 0.65cm;
+}
+.register-container {
+    margin-right: 0.25rem;
+}
+
+.button-login, .button-register {
+    align-self: center;
+    width: 175px;
+    height: 50px;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+}
+.button-login {
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
+.button-register {
+    color: var(--green);
+    border: 2px solid var(--green);
+}
+
+.button-login:hover {
     background-color: var(--blue);
-}
-.navigation li:hover a {
     color: var(--white);
+    transition: all 0.25s ease-out;
+}
+.button-register:hover {
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.25s ease-out;
+}
+
+.button-login:active, .button-register:active {
+    color: var(--light-gray);
+    font-size: 14px;
+    transition: all 0.1s ease-out;
 }
