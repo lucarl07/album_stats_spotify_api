@@ -1,17 +1,17 @@
 /* Color palette: */
 :root {
-    /* PRIMARY (temp): */
-    --white: #eeeeee;
-    --gray: #9b9696;
-    --rose-red: #a84444;
-    --yellow: #ddbe7a;
-    --black: #1a1a1a;
+    /* BASIC: */
+    --white: #eae8e3;
+    --gray: #b1a99f;
+    --rose-red: #ef5552;
+    --yellow: #cda160;
+    --black: #302b2c;
 
-    /* SECONDARY (temp): */
-    --scarlet: #be2121;
-    --blue: #4053bd;
-    --green: #4fa161;
-    --golden: #c29f54;
+    /* OPTIONAL: */
+    --scarlet: #eb2724;
+    --green: #74816f;
+    --blue: #5963a4;
+    --gold: #be8a3c;
     --light-gray: #dfdfdf;
 }
 
@@ -77,13 +77,15 @@ header {
 }
 .nav-item:hover a {
     color: var(--rose-red);
+    transition: all 0.1s ease-out;
 }
 
 .nav-item:active { /* ANIMATION 02: */
     background-color: var(--rose-red);
 }
 .nav-item:active a {
-    color: var(--yellow);
+    color: var(--white);
+    font-size: 18px;
 }
 
 /* Main->HERO properties: */
