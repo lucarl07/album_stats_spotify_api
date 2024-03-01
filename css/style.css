@@ -8,7 +8,7 @@
     --black: #302b2c;
 
     /* OPTIONAL: */
-    --scarlet: #eb2724;
+    --scarlet: #c5221f;
     --green: #74816f;
     --blue: #5963a4;
     --gold: #be8a3c;
@@ -31,20 +31,17 @@ body {
     background-color: var(--white);
 }
 
-/* Header properties: */
-header {
+/* Header->NAVBAR properties: */
+.navbar {
     z-index: 5;
     position: fixed;
-    width: 100%;
-    box-shadow: 0px 0px 15px var(--gray);
-}
-
-.navbar {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
     background-color: var(--rose-red);
+    box-shadow: 0px 0px 15px var(--gray);
 }
 .navbar img {
     width: 48px;
@@ -88,14 +85,14 @@ header {
     font-size: 18px;
 }
 
-/* Main->HERO properties: */
+/* Header->HERO properties: */
 .hero {
     display: flex;
     flex-direction: row;
-    margin: 5rem 0;
+    margin: 5rem 0 0 0;
 }
 
-/* Main->Hero->Image properties: */
+/* Header->Hero->Image properties: */
 .hero-image {
     display: flex;
     position: relative;
@@ -114,7 +111,7 @@ header {
     background-image: linear-gradient(90deg, #ffffff00, var(--white));
 }
 
-/* Main->Hero->Text properties: */
+/* Header->Hero->Text properties: */
 .hero-text {    
     display: flex;
     position: absolute;
@@ -139,6 +136,7 @@ header {
 .paragraph-container {
     display: flex;
     flex-direction: column;
+    color: var(--black);
     gap: 1rem;
 }
 
@@ -149,13 +147,14 @@ header {
     font-size: 20px;
 }
 
-/* Main->...->ACCOUNT-ENTRY-AREA properties: */
+/* Header->...->ACCOUNT-ENTRY-AREA properties: */
 .account-entry-area {
     display: flex;
     padding: 1.5rem 1rem;
     width: fit-content;
     gap: 1rem;
     background-color: var(--light-gray);
+    color: var(--black);
     border: 1px solid var(--gray);
     border-radius: 1rem;
 }
@@ -210,6 +209,49 @@ header {
     color: var(--light-gray);
     font-size: 14px;
     transition: all 0.1s ease-out;
+}
+
+/* Main properties: */
+.info-section {
+    width: 100%;
+}
+
+.discover {
+    display: flex;
+    align-items: center;
+    max-height: 644px;
+    background-color: var(--scarlet);
+    color: var(--white);
+}
+
+.discover-text {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    padding: 0 4rem;
+    max-width: 1152px;
+    gap: 3rem;
+}
+.discover-text .title {
+    font-size: 64px;
+}
+
+.discover-image {
+    display: flex;
+    position: relative;
+    margin-left: 45vw;
+}
+.discover-image img {
+    width: 1080px;
+    height: 644px;
+    object-fit: cover;
+}
+.discover-image .mask-gradient {
+    display: flex;
+    position: absolute;
+    width: 65%;
+    height: 644px;
+    background-image: linear-gradient(90deg, var(--scarlet), #ffffff00);
 }
 
 /* Footer properties: */
