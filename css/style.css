@@ -211,3 +211,15 @@ header {
     font-size: 14px;
     transition: all 0.1s ease-out;
 }
+
+/* Footer properties: */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 100%;
+    height: 5rem;
+    background-color: var(--rose-red);
+    box-shadow: 0px 0px 15px var(--gray);
+}
