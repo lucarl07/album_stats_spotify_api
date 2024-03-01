@@ -1,9 +1,10 @@
 import {getToken} from '../js/common.js';
 
-const trackId = "4VPR3GtqJrTRpZOCYpG6v6"
+const baseURL = "https://api.spotify.com/v1/tracks";
+const trackId = "4VPR3GtqJrTRpZOCYpG6v6";
 
 async function getTrackInfo(access_token) {
-  const response = await fetch(`https://api.spotify.com/v1/tracks/${trackId}`, {
+  const response = await fetch(`${baseURL}/${trackId}`, {
     method: 'GET',
     headers: { 'Authorization': 'Bearer ' + access_token },
   });
