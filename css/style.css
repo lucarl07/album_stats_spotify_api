@@ -191,8 +191,8 @@ header {
     border: 2px solid var(--blue);
 }
 .button-register {
-    color: var(--green);
-    border: 2px solid var(--green);
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
 }
 
 .button-login:hover {
@@ -201,7 +201,7 @@ header {
     transition: all 0.25s ease-out;
 }
 .button-register:hover {
-    background-color: var(--green);
+    background-color: var(--yellow);
     color: var(--white);
     transition: all 0.25s ease-out;
 }
