@@ -90,13 +90,14 @@ body {
     display: flex;
     flex-direction: row;
     margin: 5rem 0 0 0;
+    align-items: center;
 }
 
 /* Header->Hero->Image properties: */
 .hero-image {
     display: flex;
     position: relative;
-    height: 80vh;
+    height: 87vh;
 }
 .hero-image img {
     width: 55vw;
@@ -107,7 +108,7 @@ body {
     position: absolute;
     right: 0;
     width: 100%;
-    height: 80vh;
+    height: 87vh;
     background-image: linear-gradient(90deg, #ffffff00, var(--white));
 }
 
@@ -120,15 +121,15 @@ body {
     gap: 4rem;
 }
 
-.title-area {
+.hero-text .title-area {
     color: var(--black);
     text-align: left;
 }
-.title-area h1 {
+.hero-text .title-area h1 {
     font-size: 4rem;
     width: fit-content;
 }
-.title-area h2 {
+.hero-text .title-area h2 {
     margin-top: 0.5rem;
     width: fit-content;
 }
@@ -213,7 +214,7 @@ body {
 
 /* Main properties: */
 .info-section {
-    width: 100%;
+    width: 100vw;
 }
 
 .discover {
@@ -233,13 +234,17 @@ body {
     gap: 3rem;
 }
 .discover-text .title {
-    font-size: 64px;
+    font-size: 48px;
+}
+.discover-text .paragraph {
+    font-size: 22px;
 }
 
 .discover-image {
     display: flex;
     position: relative;
-    margin-left: 45vw;
+    margin-left: 43.75%;
+    
 }
 .discover-image img {
     width: 1080px;
