@@ -61,16 +61,18 @@ body {
     flex-direction: column;
     gap: 0.5rem;
 }
-.container label {
-    display: block;
-    font-size: 18px;
-}
 .container input {
     padding: 0 0.7rem;
     height: 40px;
     font-size: 18px;
     border: 1px solid var(--black);
     border-radius: 0.5rem;
+}
+
+.error-msg {
+    display: none;
+    color: var(--scarlet);
+    font-weight: 500;
 }
 
 .button {
