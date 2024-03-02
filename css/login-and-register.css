@@ -23,7 +23,7 @@
     font-family: "Montserrat", sans-serif;
 }
 
-/* Body properties: */
+/* Body and cross-document properties: */
 body {
     display: flex;
     flex-direction: column;
@@ -38,28 +38,19 @@ body {
     object-fit: cover;
 }
 
-.login-form {
+.form {
     display: flex;
     position: absolute;
     flex-direction: column;
-    padding: 2.5rem 4rem 1.5rem;
-    width: 550px;
+    padding: 2.5rem 4rem;
     gap: 3rem;
     background-color: var(--light-gray);
+    color: var(--black);
     border: 1px solid var(--gray);
     border-radius: 2rem;
-    color: var(--black);
-}
-.login-form .title {
-    text-align: center;
-    font-size: 2.2rem;
+    box-shadow: 0px 5px 20px var(--black);
 }
 
-.input-area {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
 .container {
     display: flex;
     flex-direction: column;
@@ -79,20 +70,27 @@ body {
     font-weight: 500;
 }
 
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .button {
     align-self: center;
     width: 200px;
     height: 50px;
     background: none;
-    color: var(--blue);
+    color: var(--rose-red);
     font-weight: 700;
     font-size: 20px;
-    border: 2px solid var(--blue);
+    border: 2px solid var(--rose-red);
     border-radius: 8px;
     transition: 0.1s linear;
 }
 .button:hover {
-    background-color: var(--blue);
+    background-color: var(--rose-red);
     color: var(--white);
     cursor: pointer;
     transition: 0.2s linear;
@@ -104,4 +102,37 @@ body {
 
 .copyright {
     align-self: center;
+}
+
+/* login.html properties: */
+.login {
+    width: 550px;   
+}
+.login .title {
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.login .input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* register.html properties: */
+.register {
+    width: 650px;
+}
+.register .title {
+    text-align: center;
+    font-size: 2.2rem;
+}
+.register .input-area {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+}
+.register .button {
+    width: 250px;
 }

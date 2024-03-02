@@ -10,10 +10,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Stylization -->
-    <link rel="shortcut icon" href="./images/spotify-64.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/spotify-64.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/login-and-register.css">
 </head>
 <body>
+    <img src="../images/website/background-person-using-laptop.jpg" alt="Plano de fundo do site, uma prateleira com vários discos" class="page-background">
+
+    <section class="register form">
+        <h1 class="title">Crie uma conta AlbumStats</h1>
+        
+        <div class="input-area">
+            <div class="container">
+                <label for="inUsername">Digite seu nome:</label>
+                <input type="text" name="inUsername" id="inUsername" placeholder="Ex.: Fulano de Tal">
+                <p class="error-msg">O nome de usuário não é válido. Por favor, tente novamente.</p>
+            </div>
+
+            <div class="container">
+                <label for="inEmail">Digite seu e-mail:</label>
+                <input type="text" name="inEmail" id="inEmail" placeholder="Ex.: email@email.com">
+                <p class="error-msg">O e-mail não existe ou já foi utilizado.</p>
+            </div>
+    
+            <div class="container">
+                <label for="inPassword">Digite uma senha:</label>
+                <input type="password" name="inPassword" id="inPassword" placeholder="Min. de 8 caracteres">
+                <p class="error-msg">A senha precisa ter no mínimo 8 caracteres, entre eles letras, números e caracteres especiais.</p>
+            </div>
+
+            <div class="container">
+                <label for="confirmPassword">Digite novamente a senha:</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Digite a senha novamente">
+                <p class="error-msg">A senha não é a mesma da digitada anteriormente.</p>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="button" id="btnRegister">Criar conta</button>
+            <span class="copyright">&copy; 2024 Luiz Carlos Jr.</span>
+        </div>
+    </section>
+
     <script type="module" src="../js/register.js"></script>
 </body>
 </html>
