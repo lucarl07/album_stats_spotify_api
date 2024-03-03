@@ -51,12 +51,12 @@ body {
     box-shadow: 0px 5px 20px var(--black);
 }
 
-.container {
+.input-area .container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.container input {
+.input-area .container input {
     padding: 0 0.7rem;
     height: 45px;
     font-size: 18px;
@@ -68,13 +68,6 @@ body {
     display: none;
     color: var(--scarlet);
     font-weight: 500;
-}
-
-
-.btn-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .button {
@@ -98,6 +91,12 @@ body {
 .button:active {
     transition: 0.05s ease-out;
     font-size: 18px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .copyright {
