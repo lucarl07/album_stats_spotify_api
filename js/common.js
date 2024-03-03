@@ -18,3 +18,35 @@ export async function getToken() {
 
   return await response.json();
 }
+
+// Validate an e-mail during login or account creation:
+export function isEmailValid(email) {
+  const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
+
+  if(email.match(regex)) {
+      return true;
+  } else {
+      return false;
+  }
+}
+
+// Modify CSS properties based on all inputs returning errors:
+export function allInputsInvalid(inv01, inv02, msg) {
+  msg.forEach(element => {
+      element.style.display = 'initial';
+  })
+
+  inv01.style.border = '2px solid #c5221f';
+  inv02.style.border = '2px solid #c5221f';
+}
+
+// Modify CSS properties based on one input returning an error:
+export function oneInputInvalid(val, inv, msg, i) {
+  msg.forEach(element => {
+      element.style.display = 'initial';
+  })
+  msg[i].style.display = 'none';
+
+  inv.style.border = '2px solid #c5221f';
+  val.style.border = '1px solid #302b2c';
+}

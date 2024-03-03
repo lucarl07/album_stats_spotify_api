@@ -1,10 +1,17 @@
 /* LOGIN VALIDATION: */
 
+// Function imports:
+import { 
+    isEmailValid, 
+    allInputsInvalid, 
+    oneInputInvalid 
+} from "./common.js";
+
 // Button to perform the login:
 const btnLogin = document.getElementById('btnLogin');
 
 // Input fields:
-let inEmail = document.getElementById('inEmail'),
+const inEmail = document.getElementById('inEmail'),
 inPassword = document.getElementById('inPassword');
 
 // Other HTML elements:
@@ -37,16 +44,6 @@ btnLogin.addEventListener('click', () => {
     }
 })
 
-function isEmailValid(email) {
-    const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
-
-    if(email.match(regex)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 function isPasswordValid(password) {
     /** IMPORTANT REMINDER:
      * Replace this with actual login validation.
@@ -58,23 +55,4 @@ function isPasswordValid(password) {
     } else {
         return false;
     }
-}
-
-function allInputsInvalid(inv01, inv02, msg) {
-    msg.forEach(element => {
-        element.style.display = 'initial';
-    })
-
-    inv01.style.border = '2px solid #c5221f';
-    inv02.style.border = '2px solid #c5221f';
-}
-
-function oneInputInvalid(val, inv, msg, i) {
-    msg.forEach(element => {
-        element.style.display = 'initial';
-    })
-    msg[i].style.display = 'none';
-
-    inv.style.border = '2px solid #c5221f';
-    val.style.border = '1px solid #302b2c';
 }
