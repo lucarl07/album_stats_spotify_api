@@ -99,8 +99,29 @@ body {
     gap: 1rem;
 }
 
-.copyright {
+.location-return {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     align-self: center;
+    color: var(--blue);
+    filter: saturate(2);
+    text-decoration: none;
+    font-weight: 500;
+    gap: 0.5rem;
+    transition: 0.05s ease-out;
+}
+.location-return img {
+    position: relative;
+    width: 12px;
+    height: 12px;
+}
+.location-return:hover {
+    text-decoration: underline;
+    transition: 0.05s ease-out;
+}
+.location-return:active {
+    filter: saturate(2) brightness(.65);
 }
 
 /* login.html properties: */
