@@ -26,7 +26,7 @@ btnLogin.addEventListener('click', () => {
             msg.style.display = 'none';
         })
 
-        window.location.href = './search-album.html';
+        window.location.href = './search-albums.html';
     } else {
         if(!isEmailValid(email) && !isLoginPasswordValid(password)) {
             allInputsInvalid(inEmail, inPassword, errorMessages)

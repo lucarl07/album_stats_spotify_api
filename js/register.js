@@ -26,7 +26,7 @@ document.querySelector('#btnRegister').addEventListener('click', () => {
             msg.style.display = 'none';
         })
 
-        window.location.href = './search-album.html';
+        window.location.href = './search-albums.html';
     } else {
         if (!isUsernameValid(username)) {
             invalidInput(errors, inputs, 0)
