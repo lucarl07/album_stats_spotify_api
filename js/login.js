@@ -21,14 +21,14 @@ btnLogin.addEventListener('click', () => {
     const email = inEmail.value,
     password = inPassword.value;
 
-    if(isEmailValid(email) && isPasswordValid(password)) {
+    if(isEmailValid(email) && isLoginPasswordValid(password)) {
         errorMessages.forEach(msg => {
             msg.style.display = 'none';
         })
 
         window.location.href = './search-album.html';
     } else {
-        if(!isEmailValid(email) && !isPasswordValid(password)) {
+        if(!isEmailValid(email) && !isLoginPasswordValid(password)) {
             allInputsInvalid(inEmail, inPassword, errorMessages)
 
             throw new Error('Credenciais inválidas, por favor verifique seu e-mail e senha.');
@@ -44,7 +44,7 @@ btnLogin.addEventListener('click', () => {
     }
 })
 
-function isPasswordValid(password) {
+function isLoginPasswordValid(password) {
     /** IMPORTANT REMINDER:
      * Replace this with actual login validation.
      * Regex: /^[a-zA-Z0-9#_\-)]{8,}$/
@@ -55,4 +55,14 @@ function isPasswordValid(password) {
     } else {
         return false;
     }
+}
+
+function oneInputInvalid(val, inv, msg, i) {
+    msg.forEach(element => {
+        element.style.display = 'initial';
+    })
+    msg[i].style.display = 'none';
+  
+    inv.style.border = '2px solid #c5221f';
+    val.style.border = '1px solid #302b2c';
 }

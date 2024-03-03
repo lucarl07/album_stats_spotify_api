@@ -39,14 +39,3 @@ export function allInputsInvalid(inv01, inv02, msg) {
   inv01.style.border = '2px solid #c5221f';
   inv02.style.border = '2px solid #c5221f';
 }
-
-// Modify CSS properties based on one input returning an error:
-export function oneInputInvalid(val, inv, msg, i) {
-  msg.forEach(element => {
-      element.style.display = 'initial';
-  })
-  msg[i].style.display = 'none';
-
-  inv.style.border = '2px solid #c5221f';
-  val.style.border = '1px solid #302b2c';
-}
