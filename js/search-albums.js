@@ -68,6 +68,7 @@ function showAlbums(albums) {
     const divResults = document.querySelector('.results');
     
     divResults.innerHTML = `<h2 class="area-title">Resultados:</h2>`
+    console.log(albums)
 
     albums.map(album => {
         const divAlbum = document.createElement('div')
@@ -83,9 +84,7 @@ function showAlbums(albums) {
                     </h1>
 
                     <h2 class="artist-name">
-                        <a href="${album.artists[0].external_urls.spotify}" target="_blank" rel="noopener noreferrer">
-                            ${album.artists[0].name}
-                        </a>
+                        ${getAllArtistLinks(album)}
                     </h2>
 
                     <div class="other-info">
@@ -109,11 +108,6 @@ function showAlbums(albums) {
     })
 }
 
-function goToAlbumPage(id) {
-    const encryptedId = id.toString(36) // Non-functional encryption (will be replaced with another method)
-    return `./about-album.html?id=${encryptedId}`
-}
-
 function getAlbumType(type, trackNum) {
     if(type === 'album') {
         return 'Álbum';
@@ -126,6 +120,32 @@ function getAlbumType(type, trackNum) {
     } else if (type === 'compilation') {
         return 'Compilação'
     }
+}
+
+function goToAlbumPage(id) {
+    const encryptedId = id.toString(36) // Non-functional encryption (will be replaced with another method)
+    return `./about-album.html?id=${encryptedId}`
+}
+
+function getAllArtistLinks(album) {
+    let creditedArtists = '',
+    lastArtist = (album.artists.length) - 1;
+
+    if(album.artists.length > 1) {
+        album.artists.forEach((artist, i) => {
+            if(i < lastArtist) {
+                creditedArtists += `<a href="${artist.external_urls.spotify}" target="_blank" rel="noopener noreferrer">${artist.name}</a>, `;
+            } else {
+                creditedArtists += `<a href="${artist.external_urls.spotify}" target="_blank" rel="noopener noreferrer">${artist.name}</a>`;
+            }
+        })
+    } else {
+        creditedArtists = `
+            <a href="${album.artists[0].external_urls.spotify}" target="_blank" rel="noopener noreferrer">${album.artists[0].name}</a>
+        `;
+    }
+    
+    return creditedArtists;
 }
 
 function getAlbumYear(date) {
