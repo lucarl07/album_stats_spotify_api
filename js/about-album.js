@@ -1,11 +1,11 @@
 /* ABOUT THE SELECTED ALBUM: */
 
 // Import access token
-import { getToken } from "./common.js";
+import { getToken, getAllArtistNames } from "./common.js";
 
 // Change the page title
 function changePageTitle(album) {
-    document.title = `${album.artists[0].name} - ${album.name} | AlbumStats`
+    document.title = `${getAllArtistNames(album)} - ${album.name} | AlbumStats`
 }
 
 document.addEventListener('DOMContentLoaded', () => {
