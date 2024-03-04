@@ -228,6 +228,7 @@ header {
 .discover {
     display: flex;
     align-items: center;
+    margin-bottom: 5rem;
     max-height: 644px;
     background-color: var(--scarlet);
     color: var(--white);
@@ -277,10 +278,12 @@ header {
     width: 65vw;
     min-height: 960px;
     background-color: var(--gray-200);
+    color: var(--black);
     border-left: 1px solid var(--gray);
     border-right: 1px solid var(--gray);
 }
 .page-content .title {
+    margin-bottom: 1rem;
     font-size: 3rem;
 }
 
@@ -299,24 +302,52 @@ header {
 }
 .search-area .request .input-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
+    border: 1px solid var(--black);
+    border-radius: 35px;
 }
 .search-area .request .input-div input {
-    padding: .5rem;
-    width: 80%;
+    padding: 0 19% 0 1.5rem;
+    width: 100%;
     height: 50px;
+    border: none;
+    border-radius: inherit;
     font-size: 20px;
 }
 .search-area .request .input-div button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    gap: 1rem;
     width: 10%;
-    height: 40px;
+    height: 50px;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-right: 1px solid var(--blue);
+    border-radius: inherit;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.15s linear;
+}
+.search-area .request .input-div button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.search-area .area-title {
+    font-size: 2rem;
+    color: var(--scarlet);
 }
 
 /* Search-albums->Main->...->Results properties: */
 .search-area .results {
     display: flex;
     flex-direction: column;
+    padding: 1rem;
     gap: 1.5rem;
     width: 100%;
     height: 100%;
@@ -359,16 +390,19 @@ header {
     font-size: 2.5rem;
     transition: 0.1s ease-out;
 }
-.info-box .top-section .album-title a:hover {
-    color: var(--scarlet);
-}
-.info-box .top-section .artist-name {
+.info-box .top-section .artist-name a {
+    color: var(--black);
+    text-decoration: none;
     font-size: 1.5rem;
+    transition: 0.1s ease-out;
+}
+.info-box .top-section a:hover {
+    color: var(--scarlet);
 }
 .info-box .top-section .other-info {
     display: flex;
     justify-content: space-between;
-    max-width: 150px;
+    max-width: 140px;
     font-size: 1.125rem;
 }
 
@@ -395,6 +429,7 @@ footer {
     width: 100%;
     height: 5rem;
     background-color: var(--rose-red);
+    color: var(--white);
     box-shadow: 0px 0px 15px var(--gray);
 }
 
@@ -406,7 +441,7 @@ footer {
     text-align: right;
 }
 .attributions a {
-    color: var(--black);
+    color: var(--white);
 }
 .attributions a .strong {
     font-weight: 600;

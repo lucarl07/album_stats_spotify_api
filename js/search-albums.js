@@ -56,6 +56,8 @@ function showAlbums(albums) {
     const divResults = document.querySelector('.results');
     console.log('Álbuns: \n', albums)
     
+    divResults.innerHTML = `<h2 class="area-title">Resultados:</h2>`
+
     albums.map(album => {
         const divAlbum = document.createElement('div')
 
@@ -69,15 +71,19 @@ function showAlbums(albums) {
                         <a href="#">${album.name}</a>
                     </h1>
 
-                    <h2 class="artist-name">${album.artists[0].name}</h2>
+                    <h2 class="artist-name">
+                        <a href="${album.artists[0].external_urls.spotify}" target="_blank" rel="noopener noreferrer">
+                            ${album.artists[0].name}
+                        </a>
+                    </h2>
 
                     <div class="other-info">
-                        <span>${getAlbumYear(album.release_date)}</span> - <span>${album.total_tracks} ${trackOrTracks(album.total_tracks)}</span>
+                        <span>${getAlbumYear(album.release_date)}</span> • <span>${album.total_tracks} ${trackOrTracks(album.total_tracks)}</span>
                     </div>
                 </div>
 
                 <div class="bottom-section">
-                    <a href="${album.external_urls.spotify}" class="spotify-url">
+                    <a  class="spotify-url" href="${album.external_urls.spotify}" target="_blank" rel="noopener noreferrer">
                         Ver álbum no Spotify
                     </a>
                 </div>
