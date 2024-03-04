@@ -1,11 +1,30 @@
 /* ABOUT THE SELECTED ALBUM: */
 
 // Import access token
-import { getToken, getAllArtistNames } from "./common.js";
+import { getToken } from "./common.js";
 
 // Change the page title
 function changePageTitle(album) {
     document.title = `${getAllArtistNames(album)} - ${album.name} | AlbumStats`
+}
+
+function getAllArtistNames(album) {
+    let creditedArtists = '',
+    lastArtist = (album.artists.length) - 1;
+
+    if(album.artists.length > 1) {
+        album.artists.forEach((artist, i) => {
+            if(i < lastArtist) {
+                creditedArtists += `${artist.name}, `;
+            } else {
+                creditedArtists += `${artist.name}`;
+            }
+        });
+    } else {
+        creditedArtists = album.artists[0].name
+    }
+    
+    return creditedArtists;
 }
 
 document.addEventListener('DOMContentLoaded', () => {

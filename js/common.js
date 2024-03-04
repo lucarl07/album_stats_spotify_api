@@ -39,23 +39,3 @@ export function allInputsInvalid(inv01, inv02, msg) {
     inv01.style.border = '2px solid #c5221f';
     inv02.style.border = '2px solid #c5221f';
 }
-
-// Create a string with all the artists of an album's names
-export function getAllArtistNames(album) {
-    let creditedArtists = '',
-    lastArtist = (album.artists.length) - 1;
-
-    if(album.artists.length > 1) {
-        album.artists.forEach((artist, i) => {
-            if(i < lastArtist) {
-                creditedArtists += `${artist.name}, `;
-            } else {
-                creditedArtists += `${artist.name}`;
-            }
-        });
-    } else {
-        creditedArtists = album.artists[0].name
-    }
-    
-    return creditedArtists;
-}
