@@ -298,7 +298,8 @@ header {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    height: 130px;
+    gap: 1rem;
+    height: 150px;
 }
 .search-area .request .input-div {
     display: flex;
@@ -333,9 +334,12 @@ header {
     transition: all 0.15s linear;
 }
 .search-area .request .input-div button:hover {
-    background-color: var(--blue);
-    color: var(--white);
     cursor: pointer;
+}
+
+.search-area .request .parameters {
+    display: flex;
+    justify-content: space-between;
 }
 
 .search-area .area-title {
@@ -347,7 +351,7 @@ header {
 .search-area .results {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 0 1rem 1rem;
     gap: 1.5rem;
     width: 100%;
     height: 100%;

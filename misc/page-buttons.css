@@ -1,0 +1,25 @@
+.search-area .request .parameters button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: 40px;
+    width: 160px;
+    background-color: var(--yellow);
+    color: var(--black);
+    border: none;
+    border-radius: 35px;
+}
+.search-area .request .parameters button img {
+    width: 16px;
+}
+.search-area .request .parameters .next-page {
+    flex-direction: row-reverse;
+}
+.search-area .request .parameters .next-page img {
+    rotate: 180deg;
+}
+.search-area .request .parameters button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
