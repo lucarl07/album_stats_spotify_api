@@ -3,30 +3,42 @@
 // Import access token
 import { getToken } from "./common.js";
 
-// Declare HTML elements and properties
+// Declare HTML input fields:
 const inGetAlbum = document.querySelector('#inGetAlbum'),
-btnRequest = document.querySelector('#btnRequest');
-let objectPage = 0;
+inArtistName = document.querySelector('#inArtistName'),
+selPopularity = document.querySelector('#selPopularity'),
+inFirstReleaseYear = document.querySelector('#inFirstReleaseYear'),
+inLastReleaseYear = document.querySelector('#inLastReleaseYear');
 
 // Declare URL endpoint
 const baseUrl = "https://api.spotify.com/v1/search"
 
 // When the search button is clicked:
-btnRequest.addEventListener('click', () => {
+document.querySelector('#btnRequest').addEventListener('click', () => {
 
     // Get albums using the access token
     const getArrayOfAlbums = async(access_token) => {
 
-        // Declare the offset and encoded album name for the search
-        const albumName = encodeURIComponent(inGetAlbum.value);
-        let offset = 0;
-        
-        if (objectPage > 0) {
-            offset = (objectPage * 8) + 1;
+        // Encode URI components:
+        const albumName = encodeURIComponent(inGetAlbum.value)
+        let artistName = '', firstYear = '', lastYear = '', popularity = '';
+
+        if(inArtistName.value !== "") {
+            artistName = "artist:" + encodeURIComponent(inArtistName.value);
+        }
+        if(inFirstReleaseYear.value !== "") {
+            firstYear = "%20year:" + encodeURIComponent(inFirstReleaseYear.value);
+        }
+        if(inLastReleaseYear.value !== "") {
+            lastYear = "-" + encodeURIComponent(inLastReleaseYear.value);
+        }
+        if(selPopularity.value == "tag:new" || selPopularity.value == "tag:hipster") {
+            popularity = "%20" + selPopularity.value
         }
 
         // Set the fetch URL with all the parameters
-        const compositeUrl = `${baseUrl}?q=${albumName}&type=album&offset=${offset}`;
+        const compositeUrl = `${baseUrl}?q=${albumName+artistName+firstYear+lastYear+popularity}&type=album&offset=0`;
+        console.log(compositeUrl)
 
         // Fetch the composite URL
         const response = await fetch(compositeUrl, {
@@ -38,7 +50,8 @@ btnRequest.addEventListener('click', () => {
 
         // Slice the amount of albums shown (max. 8) by page, and then return
         const data = await response.json();
-        const limitData = data.albums.items.slice(0, 8);
+
+        const limitData = data.albums.items.slice(0, 10);
         return {
             results: limitData
         }
@@ -63,7 +76,7 @@ function showAlbums(albums) {
 
         divAlbum.id = `${album.id}`
         divAlbum.innerHTML = `
-            <img src="${album.images[1].url}" alt="Capa do ${album.type} ${album.name}">
+            <img src="${album.images[1].url}" alt="Capa do(a) ${getAlbumType(album.album_type, album.total_tracks)} ${album.name}">
 
             <article class="info-box">
                 <div class="top-section">
@@ -83,7 +96,7 @@ function showAlbums(albums) {
                 </div>
 
                 <div class="bottom-section">
-                    <a  class="spotify-url" href="${album.external_urls.spotify}" target="_blank" rel="noopener noreferrer">
+                    <a class="spotify-url" href="${album.external_urls.spotify}" target="_blank" rel="noopener noreferrer">
                         Ver álbum no Spotify
                     </a>
                 </div>
