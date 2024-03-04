@@ -38,7 +38,6 @@ document.querySelector('#btnRequest').addEventListener('click', () => {
 
         // Set the fetch URL with all the parameters
         const compositeUrl = `${baseUrl}?q=${albumName+artistName+firstYear+lastYear+popularity}&type=album&offset=0`;
-        console.log(compositeUrl)
 
         // Fetch the composite URL
         const response = await fetch(compositeUrl, {
@@ -67,7 +66,6 @@ document.querySelector('#btnRequest').addEventListener('click', () => {
 
 function showAlbums(albums) {
     const divResults = document.querySelector('.results');
-    console.log('Álbuns: \n', albums)
     
     divResults.innerHTML = `<h2 class="area-title">Resultados:</h2>`
 
@@ -76,12 +74,12 @@ function showAlbums(albums) {
 
         divAlbum.id = `${album.id}`
         divAlbum.innerHTML = `
-            <img src="${album.images[1].url}" alt="Capa do(a) ${getAlbumType(album.album_type, album.total_tracks)} ${album.name}">
+            <img id="cover-${album.id}" src="${album.images[1].url}" alt="Capa do(a) ${getAlbumType(album.album_type, album.total_tracks)} ${album.name}">
 
             <article class="info-box">
                 <div class="top-section">
                     <h1 class="album-title">
-                        <a href="#">${album.name}</a>
+                        <a href="${goToAlbumPage(album.id)}">${album.name}</a>
                     </h1>
 
                     <h2 class="artist-name">
@@ -105,7 +103,15 @@ function showAlbums(albums) {
 
         divAlbum.classList.add('album')
         divResults.appendChild(divAlbum)
+        document.querySelector(`#cover-${album.id}`).addEventListener('click', () => {
+            window.location.href = goToAlbumPage(album.id);
+        })
     })
+}
+
+function goToAlbumPage(id) {
+    const encryptedId = id.toString(36) // Non-functional encryption (will be replaced with another method)
+    return `./about-album.html?id=${encryptedId}`
 }
 
 function getAlbumType(type, trackNum) {
