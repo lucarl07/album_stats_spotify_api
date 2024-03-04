@@ -15,7 +15,7 @@ const baseUrl = "https://api.spotify.com/v1/search"
 btnRequest.addEventListener('click', () => {
 
     // Get albums using the access token
-    const getAlbums = async(access_token) => {
+    const getArrayOfAlbums = async(access_token) => {
 
         // Declare the offset and encoded album name for the search
         const albumName = encodeURIComponent(inGetAlbum.value);
@@ -46,7 +46,7 @@ btnRequest.addEventListener('click', () => {
 
     // Call all the functions
     getToken().then(response => {
-        getAlbums(response.access_token).then(response => {
+        getArrayOfAlbums(response.access_token).then(response => {
             showAlbums(response.results)
         })
     });
@@ -63,14 +63,23 @@ function showAlbums(albums) {
         divAlbum.innerHTML = `
             <img src="${album.images[1].url}" alt="Capa do ${album.type} ${album.name}">
 
-            <article class="infobox">
-                <div class="name-and-artist">
-                    <h1 class="album-name">${album.name}</h1>
+            <article class="info-box">
+                <div class="top-section">
+                    <h1 class="album-title">
+                        <a href="#">${album.name}</a>
+                    </h1>
+
                     <h2 class="artist-name">${album.artists[0].name}</h2>
+
+                    <div class="other-info">
+                        <span>${getAlbumYear(album.release_date)}</span> - <span>${album.total_tracks} ${trackOrTracks(album.total_tracks)}</span>
+                    </div>
                 </div>
 
-                <div class="type-and-release">
-                    <span>${album.type}</span> - <span>${album.release_date}</span>
+                <div class="bottom-section">
+                    <a href="${album.external_urls.spotify}" class="spotify-url">
+                        Ver álbum no Spotify
+                    </a>
                 </div>
             </article>
         `;
@@ -78,4 +87,17 @@ function showAlbums(albums) {
         divAlbum.classList.add('album')
         divResults.appendChild(divAlbum)
     })
+}
+
+function getAlbumYear(date) {
+    const year = date.split("-", 1)
+    return year;
+}
+
+function trackOrTracks(num) {
+    if(num > 1) {
+        return "faixas";
+    } else {
+        return "faixa";
+    }
 }
