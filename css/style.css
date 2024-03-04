@@ -405,8 +405,8 @@ header {
 }
 .info-box .top-section .other-info {
     display: flex;
-    justify-content: space-between;
-    max-width: 140px;
+    justify-content: start;
+    gap: 10px;
     font-size: 1.125rem;
 }
 

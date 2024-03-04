@@ -78,7 +78,7 @@ function showAlbums(albums) {
                     </h2>
 
                     <div class="other-info">
-                        <span>${getAlbumYear(album.release_date)}</span> • <span>${album.total_tracks} ${trackOrTracks(album.total_tracks)}</span>
+                        <span>${getAlbumType(album.album_type, album.total_tracks)}</span> • <span>${getAlbumYear(album.release_date)}</span> • <span>${album.total_tracks} ${trackOrTracks(album.total_tracks)}</span>
                     </div>
                 </div>
 
@@ -93,6 +93,20 @@ function showAlbums(albums) {
         divAlbum.classList.add('album')
         divResults.appendChild(divAlbum)
     })
+}
+
+function getAlbumType(type, trackNum) {
+    if(type === 'album') {
+        return 'Álbum';
+    } else if (type === 'single') {
+        if (trackNum >= 3) {
+            return 'EP'
+        } else {
+            return 'Single'
+        }
+    } else if (type === 'compilation') {
+        return 'Compilação'
+    }
 }
 
 function getAlbumYear(date) {
