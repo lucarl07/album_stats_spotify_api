@@ -3,8 +3,7 @@
 // Function imports:
 import { 
     isEmailValid, 
-    allInputsInvalid, 
-    oneInputInvalid 
+    allInputsInvalid
 } from "./common.js";
 
 // Button to perform the login:
