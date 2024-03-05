@@ -446,6 +446,31 @@ header {
     text-decoration: underline;
 }
 
+/* About Album->Main properties: */
+.page-album {
+    display: flex;
+    width: 100%;
+    gap: 2.5rem;
+}
+.page-album .album-cover {
+    width: 350px;
+    border: 1px solid var(--gray);
+}
+
+.page-album .album-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.page-album .album-info .title-area .title {
+    margin: 0;
+}
+
+.page-album .album-info .table .table-cell {
+    padding: 1rem 0;
+}
+
 /* Footer properties: */
 footer {
     display: flex;

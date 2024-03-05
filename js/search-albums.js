@@ -1,7 +1,7 @@
 /* SEARCH ALBUMS BASED ON NAME: */
 
 // Import access token
-import { getToken } from "./common.js";
+import { getToken, getReleaseType, getReleaseYear } from "./common.js";
 
 // Declare HTML input fields:
 const inGetAlbum = document.querySelector('#inGetAlbum'),
@@ -73,9 +73,9 @@ function showAlbums(albums) {
     albums.map(album => {
         const divAlbum = document.createElement('div')
 
-        divAlbum.id = `${album.id}`
+        divAlbum.id = album.id;
         divAlbum.innerHTML = `
-            <img id="cover-${album.id}" src="${album.images[1].url}" alt="Capa do(a) ${getAlbumType(album.album_type, album.total_tracks)} ${album.name}">
+            <img id="cover-${album.id}" src="${album.images[1].url}" alt="Capa do(a) ${getReleaseType(album.album_type, album.total_tracks)} ${album.name}">
 
             <article class="info-box">
                 <div class="top-section">
@@ -88,7 +88,7 @@ function showAlbums(albums) {
                     </h2>
 
                     <div class="other-info">
-                        <span>${getAlbumType(album.album_type, album.total_tracks)}</span> • <span>${getAlbumYear(album.release_date)}</span> • <span>${album.total_tracks} ${trackOrTracks(album.total_tracks)}</span>
+                        <span>${getReleaseType(album.album_type, album.total_tracks)}</span> • <span>${getReleaseYear(album.release_date)}</span> • <span>${album.total_tracks} ${trackOrTracks(album.total_tracks)}</span>
                     </div>
                 </div>
 
@@ -106,20 +106,6 @@ function showAlbums(albums) {
             window.location.href = goToAlbumPage(album.id);
         })
     })
-}
-
-function getAlbumType(type, trackNum) {
-    if(type === 'album') {
-        return 'Álbum';
-    } else if (type === 'single') {
-        if (trackNum >= 3) {
-            return 'EP'
-        } else {
-            return 'Single'
-        }
-    } else if (type === 'compilation') {
-        return 'Compilação'
-    }
 }
 
 function goToAlbumPage(id) {
@@ -146,11 +132,6 @@ function getAllArtistLinks(album) {
     }
     
     return creditedArtists;
-}
-
-function getAlbumYear(date) {
-    const year = date.split("-", 1)
-    return year;
 }
 
 function trackOrTracks(num) {

@@ -19,6 +19,36 @@ export async function getToken() {
     return await response.json();
 }
 
+// Modify CSS properties based on all inputs returning errors:
+export function allInputsInvalid(inv01, inv02, msg) {
+    msg.forEach(element => {
+        element.style.display = 'initial';
+    })
+
+    inv01.style.border = '2px solid #c5221f';
+    inv02.style.border = '2px solid #c5221f';
+}
+
+// Get the type of the release (album, single, EP or compilation):
+export function getReleaseType(type, trackNum) {
+    if(type === 'album') {
+        return 'Álbum';
+    } else if (type === 'single') {
+        if (trackNum >= 3) {
+            return 'EP'
+        } else {
+            return 'Single'
+        }
+    } else if (type === 'compilation') {
+        return 'Compilação'
+    }
+}
+
+export function getReleaseYear(date) {
+    const year = date.split("-", 1)
+    return year;
+}
+
 // Validate an e-mail during login or account creation:
 export function isEmailValid(email) {
     const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
@@ -28,14 +58,4 @@ export function isEmailValid(email) {
     } else {
         return false;
     }
-}
-
-// Modify CSS properties based on all inputs returning errors:
-export function allInputsInvalid(inv01, inv02, msg) {
-    msg.forEach(element => {
-        element.style.display = 'initial';
-    })
-
-    inv01.style.border = '2px solid #c5221f';
-    inv02.style.border = '2px solid #c5221f';
 }
