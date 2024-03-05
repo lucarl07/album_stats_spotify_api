@@ -268,7 +268,7 @@ header {
     background-image: linear-gradient(90deg, var(--scarlet), #ffffff00);
 }
 
-/* Search-albums->Main properties: */
+/* Search Albums->Main properties: */
 .page-content {
     display: flex;
     flex-direction: column;
@@ -299,6 +299,7 @@ header {
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
+    margin-bottom: 2rem;
     height: 150px;
 }
 .search-area .request .input-div {
@@ -339,7 +340,27 @@ header {
 
 .search-area .request .parameters {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    align-items: center;
+    gap: 4rem;
+}
+.search-area .request .parameters .input-filter, 
+.search-area .request .parameters .select-filter {
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    gap: .25rem;
+}
+.search-area .request .parameters input {
+    width: 150px;
+    height: 25px;
+}
+.search-area .request .parameters select {
+    width: 150px;
+    height: 25px;
+}
+.search-area .request .parameters .years input {
+    width: 75px;
 }
 
 .search-area .area-title {
@@ -347,7 +368,7 @@ header {
     color: var(--scarlet);
 }
 
-/* Search-albums->Main->...->Results properties: */
+/* Search Albums->Main->...->Results properties: */
 .search-area .results {
     display: flex;
     flex-direction: column;

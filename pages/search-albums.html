@@ -49,6 +49,7 @@
                             Pesquisar
                         </button>
                     </div>
+                    <hr>
 
                     <div class="parameters">
                         <!-- BOTÕES PARA A PASSAGEM DE PÁGINA:
@@ -79,12 +80,14 @@
 
                         <div class="input-filter">
                             <label for="inFirstReleaseYear">Época de lançamento:</label>
-                            <input type="number" name="inFirstReleaseYear" id="inFirstReleaseYear"> -
-                            <input type="number" name="inLastReleaseYear" id="inLastReleaseYear">
+                            <div class="years">
+                                <input type="number" name="inFirstReleaseYear" id="inFirstReleaseYear" placeholder="min."> -
+                                <input type="number" name="inLastReleaseYear" id="inLastReleaseYear" placeholder="max.">
+                            </div>
                         </div>
                     </div>
+                    <hr>
                 </div>
-                
                 <div class="results"></div>
             </div>
         </section>
