@@ -52,19 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
     getToken().then(response => {
         getAlbumInfo(response.access_token).then(response => {
             changePageTitle(response);
-            loadPageContent(response);
+            loadReleaseContent(response);
+            loadTrackContent(response.tracks.items);
         })
     })
 })
 
-function loadPageContent(album) {
-    const divPageContent = document.querySelector('.page-content')
+function loadReleaseContent(album) {
+    const topContent = document.querySelector('.top-content')
     const divPageAlbum = document.createElement('div')
     
     const artistsString = getAllArtistNames(album);
     console.log(album);
 
-    divPageAlbum.id = album.id;
+    divPageAlbum.id = `${album.type}-${album.id}`;
     divPageAlbum.innerHTML = `
         <div class="page-album">
             <img class="album-cover" src="${album.images[0].url}" alt="Capa do ${album.type} ${album.name}">
@@ -112,5 +113,36 @@ function loadPageContent(album) {
     `;
 
     divPageAlbum.classList.add('page-album')
-    divPageContent.appendChild(divPageAlbum);
+    topContent.appendChild(divPageAlbum);
+}
+
+function loadTrackContent(tracks) {
+    const bottomContent = document.querySelector('.bottom-content')
+    console.log(tracks);
+
+    bottomContent.innerHTML = `<h2>Faixas:</h2>`
+
+    tracks.map(track => {
+        const divAlbumTracks = document.createElement('div');
+        // const artistsString = getAllArtistNames(tracks);
+
+        divAlbumTracks.id = `track-${track.id}`
+        divAlbumTracks.innerHTML = `
+            <div class="track-name">
+                <strong>${track.track_number}.</strong> <a href="#">${track.name}</a>
+            </div>
+            <div class="track-duration">
+                ${millisToMinutesAndSeconds(track.duration_ms)}
+            </div>
+        `;
+
+        divAlbumTracks.classList.add('track')
+        bottomContent.appendChild(divAlbumTracks)
+    })
+}
+
+function millisToMinutesAndSeconds(miliSecs) {
+    let minutes = Math.floor(miliSecs / 60000)
+    let seconds = ((miliSecs % 60000) / 1000).toFixed(0);
+    return (seconds == 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
 }

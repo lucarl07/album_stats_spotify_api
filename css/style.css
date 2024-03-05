@@ -447,8 +447,13 @@ header {
 }
 
 /* About Album->Main properties: */
-.page-album {
+.top-content, .bottom-content {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.page-album {
+    display: inherit;
     width: 100%;
     gap: 2.5rem;
 }
@@ -469,6 +474,37 @@ header {
 
 .page-album .album-info .table .table-cell {
     padding: 1rem 0;
+}
+
+.line {
+    margin: 2rem 0;
+    width: 100%;
+    height: 1px;
+    color: var(--black);
+}
+
+.bottom-content {
+    width: 100%;
+}
+.bottom-content h2 {
+    margin-bottom: 1rem;
+}
+.bottom-content .track {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+    border-bottom: 1px solid var(--gray);
+}
+.bottom-content .track .track-name {
+    color: var(--scarlet);
+}
+.bottom-content .track .track-name a {
+    color: var(--scarlet);
+    text-decoration: none;
+}
+.bottom-content .track .track-duration {
+    color: var(--rose-red);
 }
 
 /* Footer properties: */
