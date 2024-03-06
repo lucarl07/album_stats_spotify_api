@@ -337,6 +337,10 @@ header {
 .search-area .request .input-div button:hover {
     cursor: pointer;
 }
+.search-area .request .section-line {
+    color: var(--gray-200);
+    height: 1px;
+}
 
 .search-area .request .parameters {
     display: flex;
