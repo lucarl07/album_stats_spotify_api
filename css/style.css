@@ -229,6 +229,8 @@ header {
     display: flex;
     align-items: center;
     margin-bottom: 5rem;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     max-height: 644px;
     background-color: var(--scarlet);
     color: var(--white);
@@ -236,11 +238,15 @@ header {
 
 .discover-text {
     display: flex;
-    position: absolute;
     flex-direction: column;
     padding: 0 4rem;
-    max-width: 1152px;
+    width: 90vw;
     gap: 3rem;
+}
+.discover-text .title-area {
+    display: inherit;
+    flex-direction: inherit;
+    gap: 1rem;
 }
 .discover-text .title {
     font-size: 48px;
@@ -251,9 +257,6 @@ header {
 
 .discover-image {
     display: flex;
-    position: relative;
-    margin-left: 43.75%;
-    
 }
 .discover-image img {
     width: 1080px;
